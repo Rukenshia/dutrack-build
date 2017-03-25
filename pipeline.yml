@@ -1,0 +1,22 @@
+
+resources:
+- name: source
+  type: git
+  source:
+    uri: https://github.com/Rukenshia/dutrack-build.git
+    branch: master
+
+- name: docker-img
+  type: docker-image
+  source:
+    repository: ruken/dutrack-build
+    username: {{docker-user}}
+    password: {{docker-password}}
+
+jobs:
+- name: image
+  plan:
+    - get: source
+    - put: docker-img
+      params:
+        build: source/docker
