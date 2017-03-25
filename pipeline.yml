@@ -14,7 +14,7 @@ resources:
     password: {{docker-password}}
 
 jobs:
-- name: image
+- name: build
   plan:
     - get: source
       trigger: true
