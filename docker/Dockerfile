@@ -15,4 +15,5 @@ RUN cargo install diesel_cli
 
 # start postgres service
 ADD start.sh .
-ENTRYPOINT ./start.sh && bash
+ENTRYPOINT ["/bin/bash", "./start.sh"]
+CMD ["/bin/bash"]
