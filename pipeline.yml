@@ -17,6 +17,7 @@ jobs:
 - name: image
   plan:
     - get: source
+      trigger: true
     - put: docker-img
       params:
         build: source/docker
