@@ -14,5 +14,5 @@ ENV PATH=$PATH:/root/.cargo/bin
 RUN cargo install diesel_cli
 
 # start postgres service
-ADD start.sh
+ADD start.sh .
 ENTRYPOINT ./start.sh && bash
