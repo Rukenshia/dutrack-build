@@ -12,8 +12,3 @@ RUN ./install_rustup.sh -y --default-toolchain=nightly-2017-03-04
 # setup diesel_cli
 ENV PATH=$PATH:/root/.cargo/bin
 RUN cargo install diesel_cli
-
-# start postgres service
-ADD start.sh .
-ENTRYPOINT ["/bin/bash", "./start.sh"]
-CMD ["/bin/bash"]
